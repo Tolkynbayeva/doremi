@@ -15,7 +15,7 @@ type Handler struct {
 func NewHandler(service service.Service) *Handler {
 	return &Handler{
 		service: service,
-		Http:    http.NewHttpHandler(service.User),
-		Grpc:    grpc.NewGrpcHandler(service.User),
+		Http:    http.NewHttpHandler(service),
+		Grpc:    grpc.NewGrpcHandler(service),
 	}
 }

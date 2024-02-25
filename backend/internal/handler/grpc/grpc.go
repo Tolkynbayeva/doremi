@@ -1,15 +1,13 @@
 package grpc
 
+import "doremi/internal/service"
+
 type Grpc struct {
-	grpc IGrpcInterface
+	service service.Service
 }
 
-type IGrpcInterface interface {
-	// methods
-}
-
-func NewGrpcHandler(grpc IGrpcInterface) *Grpc {
+func NewGrpcHandler(service service.Service) *Grpc {
 	return &Grpc{
-		grpc: grpc,
+		service: service,
 	}
 }

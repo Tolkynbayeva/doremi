@@ -3,6 +3,7 @@ package user
 import (
 	"context"
 	"doremi/internal/model"
+	"doremi/internal/pkg"
 	"doremi/internal/repository/user"
 )
 
@@ -21,5 +22,11 @@ func NewUserService(repo user.IUserRepository) *UserService {
 }
 
 func (u *UserService) CreateNewUser(user model.User, ctx context.Context) error {
+	var err error
+	user.Password, err = pkg.HashPassword(user.Password)
+	if err != nil {
+		return err
+	}
+	
 	return u.repo.CreateNewUser(ctx, user)
 }

@@ -2,14 +2,14 @@ package repository
 
 import (
 	"context"
-	"doremi/config"
+	"doremi/internal/config"
 	"fmt"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"time"
 )
 
-func LoadMongo(db config.MongoDB) (*mongo.Client, error) {
+func LoadMongo(db config.MongoDB) (*mongo.Database, error) {
 	uri := fmt.Sprintf("mongodb+srv://%s:%s@%s/?retryWrites=true&w=majority", db.User, db.Password, db.Host)
 
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
@@ -27,5 +27,7 @@ func LoadMongo(db config.MongoDB) (*mongo.Client, error) {
 		return nil, err
 	}
 
-	return client, nil
+	database := client.Database(db.Name)
+
+	return database, err
 }

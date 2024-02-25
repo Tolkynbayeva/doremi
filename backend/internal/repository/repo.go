@@ -9,7 +9,7 @@ type Repository struct {
 	user.IUserRepository
 }
 
-func NewRepo(client *mongo.Client) *Repository {
+func NewRepo(client *mongo.Database) *Repository {
 	return &Repository{
 		IUserRepository: user.NewUserRepo(client),
 	}
