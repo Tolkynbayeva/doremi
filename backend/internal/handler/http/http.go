@@ -4,6 +4,7 @@ import (
 	"context"
 	"doremi/internal/model"
 	"doremi/internal/service"
+	"errors"
 	"github.com/gin-gonic/gin"
 	"github.com/hellofresh/health-go/v5"
 	"net/http"
@@ -50,5 +51,28 @@ func (h *Http) Register(c *gin.Context) {
 }
 
 func (h *Http) Login(c *gin.Context) {
-	return
+	var creds model.User
+	if err := c.Bind(&creds); err != nil {
+		ErrorHandler(c, err, http.StatusInternalServerError)
+		return
+	}
+
+	user, err := h.service.User.CheckUserCredentials(creds, c)
+	if err != nil {
+		if errors.Is(err, model.ErrIncorrectPassword) {
+			ErrorHandler(c, err, http.StatusBadRequest)
+		} else {
+			ErrorHandler(c, err, http.StatusInternalServerError)
+		}
+		return
+	}
+
+	token, err := h.service.User.JwtAuth(user)
+	if err != nil {
+		ErrorHandler(c, err, http.StatusInternalServerError)
+		return
+	}
+
+	c.SetCookie("Authorization", token, 3600*24*30, "", "", false, true)
+	SuccessHandler(c, model.SuccessLogin)
 }

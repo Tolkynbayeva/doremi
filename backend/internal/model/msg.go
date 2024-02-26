@@ -5,4 +5,5 @@ const (
 	ErrorMsg   = "error"
 
 	SuccessUserCreation = "successfully created new user"
+	SuccessLogin        = "successfully logged in"
 )

@@ -36,7 +36,7 @@ func main() {
 
 	r := repository.NewRepo(db)
 
-	s := service.NewService(*r)
+	s := service.NewService(*r, cfg.Auth.JwtSecretKey)
 
 	h := handler.NewHandler(*s)
 

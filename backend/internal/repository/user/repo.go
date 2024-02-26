@@ -15,6 +15,7 @@ type IUserRepository interface {
 	CreateNewUser(ctx context.Context, user model.User) error
 	DeleteUserById(ctx context.Context, id int) error
 	GetUserById(ctx context.Context, id int) (model.User, error)
+	GetUserByUsername(ctx context.Context, username string) (model.User, error)
 }
 
 func NewUserRepo(db *mongo.Database) *UserRepository {
@@ -39,5 +40,13 @@ func (u *UserRepository) GetUserById(ctx context.Context, id int) (model.User, e
 	var user model.User
 	collection := u.db.Collection("user")
 	err := collection.FindOne(ctx, bson.M{"_id": id}).Decode(&user)
+	return user, err
+}
+
+func (u *UserRepository) GetUserByUsername(ctx context.Context, username string) (model.User, error) {
+	var user model.User
+	collection := u.db.Collection("user")
+	err := collection.FindOne(ctx, bson.M{"username": username}).Decode(&username)
+
 	return user, err
 }
