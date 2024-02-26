@@ -7,8 +7,8 @@ import (
 )
 
 type Response struct {
-	Status      string
-	Description string
+	Status      string `json:"status"`
+	Description string `json:"description"`
 }
 
 func ErrorHandler(c *gin.Context, err error, code int) {
