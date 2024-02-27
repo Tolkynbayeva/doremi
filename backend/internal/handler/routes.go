@@ -12,7 +12,6 @@ func (h *Handler) Routes() *gin.Engine {
 		v1.GET("/health", func(c *gin.Context) {
 			h.Http.CheckHealth()
 		})
-
 		authGroup := v1.Group("/auth")
 		{
 			authGroup.POST("/register", h.Http.Register)

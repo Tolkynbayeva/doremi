@@ -8,7 +8,7 @@ import (
 type Config struct {
 	Host    string
 	Port    string
-	Auth    Auth
+	Key     Key
 	MongoDB MongoDB
 }
 
@@ -19,8 +19,10 @@ type MongoDB struct {
 	Name     string
 }
 
-type Auth struct {
-	JwtSecretKey string
+type Key struct {
+	JwtSecretKey     string
+	SpotifyID        string
+	SpotifySecretKey string
 }
 
 func NewConfig(path string) (Config, error) {
@@ -37,8 +39,10 @@ func NewConfig(path string) (Config, error) {
 			Host:     os.Getenv("MONGO_HOST"),
 			Name:     os.Getenv("MONGO_DB_NAME"),
 		},
-		Auth: Auth{
-			JwtSecretKey: os.Getenv("JWT_SECRET_KEY"),
+		Key: Key{
+			JwtSecretKey:     os.Getenv("JWT_SECRET_KEY"),
+			SpotifyID:        os.Getenv("SPOTIFY_CLIENT_ID"),
+			SpotifySecretKey: os.Getenv("SPOTIFY_SECRET_KEY"),
 		},
 	}
 

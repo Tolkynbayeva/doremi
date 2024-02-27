@@ -34,6 +34,8 @@ func (u *UserService) CreateNewUser(user model.User, ctx context.Context) error 
 		return err
 	}
 
+	user.AuthMethod = "default"
+
 	return u.repo.CreateNewUser(ctx, user)
 }
 
