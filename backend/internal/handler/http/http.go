@@ -35,15 +35,6 @@ func (h *Http) CheckHealth() http.HandlerFunc {
 	return healthController.HandlerFunc
 }
 
-// @Summary Register a new user
-// @Description Register a new user with username, email, and password
-// @ID register-user
-// @Accept  json
-// @Produce  json
-// @Param   user  body    model.User  true  "User Registration Data"
-// @Success 200  {object}  model.Response  "User successfully registered"
-// @Failure 500  {object}  model.Response  "Internal Server Error"
-// @Router /v1/auth/register [post]
 func (h *Http) Register(c *gin.Context) {
 	var user model.User
 	if err := c.Bind(&user); err != nil {
