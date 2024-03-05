@@ -1,0 +1,54 @@
+.header {
+  padding: 50px 43px 0 25px;
+  background-color: #0E1920;
+}
+
+.header-heading {
+  background: linear-gradient(to right, #EE10B0, #0E9EEF); 
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 40px;
+  line-height: 63px;
+  font-weight: 800;
+}
+
+.header-nav {
+  margin-top: 18px;
+}
+
+.header-item {
+  margin-bottom: 15px;
+}
+
+.header-item-text {
+  margin-bottom: 21px;
+  font-size: 20px;
+  line-height: 31px;
+  color: var(--color-pink);
+}
+
+.item-link {
+  padding-left: 30px;
+  font-size: 24px;
+  line-height: 38px;
+  font-weight: 600;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+}
+
+.discover-icon {
+  background-image: url(/static/img/svg/material-symbols-light_explore-outline.svg);
+}
+
+.albums-icon {
+  background-image: url(/static/img/svg/material-symbols-light_album-outline.svg);
+}
+
+.artists-icon {
+  background-image: url(/static/img/svg/profile.svg);
+}
+
+.home-icon {
+  background-image: url(/static/img/svg/home.svg);
+  background-repeat: no-repeat;
+}
