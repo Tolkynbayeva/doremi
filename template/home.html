@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoReMi</title>
+</head>
+
+<body>
+    <!--Header-->
+    <header class="header">
+        <h1 class="header-heading">DoReMi</h1>
+        <nav class="header-nav">
+            <ul class="header-list">
+                <li class="header-item">Menu</li>
+                <li class="header-item">
+                    <a href="#" class="item-link">Home</a>
+                </li>
+                <li class="header-item">
+                    <a href="#" class="item-link">Discover</a>
+                </li>
+                <li class="header-item">
+                    <a href="#" class="item-link">Albums</a>
+                </li>
+                <li class="header-item">
+                    <a href="#" class="item-link">Artists</a>
+                </li>
+                <li class="header-item">Library</li>
+
+                <li class="header-item">
+                    <a href="#" class="item-link">Recently Added</a>
+                </li>
+                <li class="header-item">
+                    <a href="#" class="item-link">Most played</a>
+                </li>
+                <li class="header-item">Playlist and favorite</li>
+                <li class="header-item">
+                    <a href="#" class="item-link">Your favorites</a>
+                </li>
+                <li class="header-item">
+                    <a href="#" class="item-link">Your playlist</a>
+                </li>
+                <li class="header-item">
+                    <a href="#" class="item-link">Add playlist</a>
+                </li>
+                <li class="header-item">general</li>
+                <li class="header-item">
+                    <a href="#" class="item-link">Setting</a>
+                </li>
+                <li class="header-item">
+                    <a href="#" class="item-link">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Navigation for body-->
+    <nav class="nav-body">
+        <ul class="nav-list">
+            <li class="nav-list-item">
+                <button class="button-search" type="submit" aria-label="Search">Search For Musics, A
+                    rtists, Albumes ...</button>
+            </li>
+            <li class="nav-list-item">
+                <ul class="descr-list">
+                    <li class="descr-item">
+                        <a href="#" class="descr-item-link">About</a>
+                    </li>
+                    <li class="descr-item">
+                        <a href="#" class="descr-item-link">Contact</a>
+                    </li>
+                    <li class="descr-item">
+                        <a href="#" class="descr-item-link">Premuim</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-list-item">
+                <ul class="nav-list-auth">
+                    <li class="nav-auth-item">
+                        <button class="auth-login" type="button" aria-label="Login">Login</button>
+                    </li>
+                    <li class="nav-auth-item">
+                        <button class="auth-sign" type="button" aria-label="Sign Up">Sign Up</button>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main class="main">
+        <!--Hero-->
+        <section class="section-hero">
+            <div class="gero-card">
+                <h2 class="card-heading">Billie eilish</h2> <!-- soedinit c back-->
+                <p class="card-text">You can have easy access to every song of billie eilish by just clicking on the
+                    Listen now botton. You can also follow him too for suppurting him and keeping it up with what he
+                    dose.</p> <!-- text nado izmenit-->
+                <button class="button-listen" type="button" aria-label="Listen Now">Listen Now</button>
+                <button class="button-follow" type="button" aria-label="Follow">Follow</button>
+            </div>
+        </section>
+        <!--Weekly Top Songs-->
+        <section class="section-topSongs">
+            <h2 class="section-heading">Weekly Top <span class="section-heading">Songs</span></h2>
+            <div class="card-topSongs">
+                <img src="{{ .Image }}" alt="{{ .Name }}">
+                <a class="card-name-song" href="/groups/{{ .Id }}">{{ .Name }}</a> <!--svoi parametry-->
+                <a class="card-name-artist" href="/groups/{{ .Id }}">{{ .Name }}</a> <!--svoi parametry-->
+            </div>
+        </section>
+        <!--New Release Songs-->
+        <section class="section-newSongs">
+            <h2 class="section-heading">New Release <span class="section-heading">Songs</span></h2>
+            <div class="card-newSongs">
+                <img src="{{ .Image }}" alt="{{ .Name }}">
+                <a class="card-name-song" href="/groups/{{ .Id }}">{{ .Name }}</a> <!--svoi parametry-->
+                <a class="card-name-artist" href="/groups/{{ .Id }}">{{ .Name }}</a> <!--svoi parametry-->
+            </div>
+        </section>
+        <!--Trending Songs-->
+        <section class="section-trendSongs">
+            <h2 class="section-heading">Trending <span class="section-heading">Songs</span></h2>
+            <div class="card-trendSongs">
+                <div class="trendSongs-number">#</div> <!--svoi parametry-->
+                <div class="trendSongs-descr">
+                    <img src="{{ .Image }}" alt="{{ .Name }}">
+                    <div class="trendSongs-name">
+                        <a class="card-name-song" href="/groups/{{ .Id }}">{{ .Name }}</a> <!--svoi parametry-->
+                        <a class="card-name-artist" href="/groups/{{ .Id }}">{{ .Name }}</a> <!--svoi parametry-->
+                    </div>
+                    <div class="trendSongs-date">Nov 4, 2023</div><!--svoi parametry-->
+                    <div class="trendSongs-album">Hard to Imagine the Neighbourhood Ever Changing</div>
+                    <!--svoi parametry-->
+                    <div class="trendSongs-time">3:26</div><!--svoi parametry-->
+                </div>
+            </div>
+        </section>
+        <!--Popular Artists-->
+        <section class="section-artists">
+            <h2 class="section-heading">Popular <span class="section-heading">Artists</span></h2>
+            <div class="card-artists">
+                <img src="{{ .Image }}" alt="{{ .Name }}">
+                <a class="card-name-artist" href="/groups/{{ .Id }}">{{ .Name }}</a> <!--svoi parametry-->
+            </div>
+        </section>
+        <!--Karaoke-->
+        <!--добавить по позже, как разберусь откуда брать-->
+        <!--Top Albums-->
+        <section class="section-albums">
+            <h2 class="section-heading">Top <span class="section-heading">Albums</span></h2>
+            <div class="card-albums">
+                <img src="{{ .Image }}" alt="{{ .Name }}">
+                <a class="card-name-album" href="/groups/{{ .Id }}">{{ .Name }}</a> <!--svoi parametry-->
+                <a class="card-name-artist" href="/groups/{{ .Id }}">{{ .Name }}</a> <!--svoi parametry-->
+            </div>
+        </section>
+        <!--Mood Playlists-->
+        <section class="section-mood">
+            <h2 class="section-heading">Mood <span class="section-heading">Playlists</span></h2>
+            <div class="card-mood">
+                <img src="{{ .Image }}" alt="{{ .Name }}">
+                <a class="card-name-album" href="/groups/{{ .Id }}">{{ .Name }}</a> <!--svoi parametry-->
+                <a class="card-name-artist" href="/groups/{{ .Id }}">{{ .Name }}</a> <!--svoi parametry-->
+            </div>
+        </section>
+        <!--Join Our Platform-->
+        <section class="section-join">
+            <h2 class="section-heading">Join Our Platform</h2>
+            <div class="card-join">
+                <p class="join-text">You can be one of the members of our platform by just adding some necessarily
+                    information. if you already have an account on our website, you can just hit the Login button.</p>
+                <button class="auth-login" type="button" aria-label="Login">Login</button>
+                <button class="auth-sign" type="button" aria-label="Sign Up">Sign Up</button>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <ul class="footer-list">
+            <li class="footer-item">
+                <h2 class="footer-heading">About</h2>
+                <div class="item-text">DoReMi is a widely recognized website that has been catering to music enthusiasts
+                    for over five years, earning its status as one of the most renowned music player platforms globally.
+                    Users can enjoy listening to a vast collection of songs for free, and for those seeking an enhanced,
+                    unrestricted experience, premium passes are available for purchase.</div>
+            </li>
+            <li class="footer-item">
+                <h2 class="footer-heading">DoReMi</h2>
+                <ul class="doremi-list">
+                    <li class="doremi-item"><a href="#" class="doremi-link">Songs</a></li>
+                    <li class="doremi-item"><a href="#" class="doremi-link">Radio</a></li>
+                    <li class="doremi-item"><a href="#" class="doremi-link">Podcast</a></li>
+                </ul>
+            </li>
+            <li class="footer-item">
+                <h2 class="footer-heading">Access</h2>
+                <ul class="access-list">
+                    <li class="access-item"><a href="#" class="access-link">Explore</a></li>
+                    <li class="access-item"><a href="#" class="access-link">Artists</a></li>
+                    <li class="access-item"><a href="#" class="access-link">Playlists</a></li>
+                    <li class="access-item"><a href="#" class="access-link">Albums</a></li>
+                    <li class="access-item"><a href="#" class="access-link">Trending</a></li>
+                </ul>
+            </li>
+            <li class="footer-item">
+                <h2 class="footer-heading">Contact</h2>
+                <ul class="contact-list">
+                    <li class="contact-item"><a href="#" class="contact-link">About</a></li>
+                    <li class="contact-item"><a href="#" class="contact-link">Policy</a></li>
+                    <li class="contact-item"><a href="#" class="contact-link">Social Media</a></li>
+                    <li class="contact-item"><a href="#" class="contact-link">Suppurt</a></li>
+                </ul>
+            </li>
+            <li class="footer-item">
+                <h1 class="header-heading">DoReMi</h1>
+                <ul class="social-list">
+                    <li class="social-item"><a href="#" class="social-link">fb</a></li>
+                    <li class="social-item"><a href="#" class="social-link">in</a></li>
+                    <li class="social-item"><a href="#" class="social-link">tw</a></li>
+                    <li class="social-item"><a href="#" class="social-link">tel</a></li>
+                </ul>
+            </li>
+        </ul>
+    </footer>
+</body>
+
+</html>
