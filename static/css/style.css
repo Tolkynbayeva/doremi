@@ -178,3 +178,46 @@ body {
 
 /* Hero */
 
+.section-hero {
+	margin-bottom: 40px;
+}
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-slides {
+  display: flex;
+	height: 344px;
+	text-align: center;
+}
+
+.hero-slide {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.btn-slide {
+  position: absolute;
+  top: 48%;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--color-dark);
+	border-radius: 50%;
+	border: none;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.slide-prev {
+  left: 0;
+}
+
+.slide-next {
+  right: 0;
+}
