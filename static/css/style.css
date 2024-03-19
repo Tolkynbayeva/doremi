@@ -74,8 +74,107 @@ body {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1132px;
   margin: 0 auto;
-  padding: 50px 90px 80px 20px;
 }
+
+.content {
+	padding-top: 62px;
+	/*потом убрать только для сравнения*/
+	padding-right: 72px; 
+}
+
+.btn {
+	width: 120px;
+	height: 38px;
+	border-radius: 10px;
+	font-size: 20px;
+	line-height: 31.3px;
+	font-weight: 600;
+}
+
+/*header*/
+.header {
+	max-width: 266px;
+	padding: 50px 22px 50px 26px;
+  background-color: #0E1920;
+}
+
+.header-heading {
+	margin-bottom: 19px;
+  background: linear-gradient(to right, #EE10B0, #0E9EEF); 
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 40px;
+  line-height: 63px;
+  font-weight: 800;
+}
+
+.nav-heading {
+	margin-bottom: 19px;
+	font-size: 20px;
+	line-height: 31px;
+	font-weight: 400;
+	color: var(--color-pink);
+}
+
+.header-nav-item {
+	width: 226px;
+	margin-bottom: 15px;
+	font-size: 24px;
+	line-height: 38px;
+	font-weight: 600;
+}
+
+/* Navigation for body */
+
+.nav-main {
+	margin-bottom: 62px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.input-search{
+	width: 360px;
+	padding: 6px 25px 0 38px;
+	background-color: #656565;
+	border-radius: 10px;
+	border: transparent;
+	background-image: url(/static/img/svg/inputSerch.png);
+	background-repeat: no-repeat;
+	background-position: 8px center;
+}
+
+::placeholder {
+	color: rgba(255, 255, 255, .6);
+}
+
+.nav-main-list {
+	display: flex;
+	width: 340px;
+	justify-content: space-between;
+}
+
+.nav-main-link {
+	font-size: 24px;
+	line-height: 37.5px;
+	font-weight: 600;
+}
+
+
+.button-login {
+	margin-right: 14px;
+	background-color: var(--color-dark);
+	color: var(--color-pink);
+	border: 1px solid var(--color-dark);
+}
+
+.button-signUp {
+	background-color: var(--color-pink);
+	color: var(--color-dark);
+	/* border: 1px solid var(--color-white); */
+	border: transparent;
+}
+
+/* Hero */
 
