@@ -36,7 +36,7 @@ func main() {
 
 	r := repository.NewRepo(db)
 
-	s := service.NewService(*r, cfg.Auth.JwtSecretKey)
+	s := service.NewService(*r, cfg.Key.JwtSecretKey, cfg.Key.SpotifyID, cfg.Key.SpotifySecretKey)
 
 	h := handler.NewHandler(*s)
 
