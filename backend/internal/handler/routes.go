@@ -17,6 +17,10 @@ func (h *Handler) Routes() *gin.Engine {
 			authGroup.POST("/register", h.Http.Register)
 			authGroup.POST("/login", h.Http.Login)
 		}
+		test := v1.Group("/test")
+		{
+			test.GET("/", h.Http.TolganayTestRoute)
+		}
 	}
 
 	return r

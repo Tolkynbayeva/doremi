@@ -76,3 +76,7 @@ func (h *Http) Login(c *gin.Context) {
 	c.SetCookie("Authorization", token, 3600*24*30, "", "", false, true)
 	SuccessHandler(c, model.SuccessLogin)
 }
+
+func (h *Http) TolganayTestRoute(c *gin.Context) {
+	c.JSON(http.StatusOK, "zdarova")
+}
